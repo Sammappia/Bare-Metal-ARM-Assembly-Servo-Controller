@@ -1,0 +1,28 @@
+	AREA FLASH, CODE, READONLY
+	INCLUDE	LPC11xx.inc
+	IMPORT LCD_send
+	EXPORT nextLine
+	EXPORT clearLCD
+
+
+CLEAR       EQU		0X01
+NEXT_LINE   EQU		0xC0
+
+
+nextLine
+	PUSH {LR}
+	MOVS R0, #NEXT_LINE
+	MOVS R1, #0
+    BL LCD_send
+	POP {PC}
+	
+clearLCD
+	PUSH {LR}
+	MOVS R0, #CLEAR
+	MOVS R1, #0
+	BL LCD_send
+	POP {PC}
+	
+	
+end
+	B end

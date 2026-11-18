@@ -1,0 +1,29 @@
+# Keil µVision Build Artifacts
+*.axf
+*.bin
+*.hex
+*.htm
+*.lnp
+*.sct
+*.map
+*.dep
+
+# Intermediate Compiler & Assembler Files
+*.crf
+*.d
+*.o
+*.obj
+*.lst
+*.i
+
+# Keil Local User State & Window Layout
+*.uvopt
+*.uvoptx
+*.uvgui.*
+*.bak
+*_Browse.dat
+*.build_log.htm
+
+# Generated Output Folders
+Objects/
+Listings/
