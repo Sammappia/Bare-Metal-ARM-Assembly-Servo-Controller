@@ -7,7 +7,7 @@ A bare-metal ARM Cortex-M0 assembly implementation on the NXP LPC1114 microcontr
 ## System Overview
 
 * **Microcontroller:** NXP LPC1114FN28 (ARM Cortex-M0)
-* **Language:** ARM Assembly (Thumb-2 instruction set)
+* **Language:** ARM Assembly
 * **Toolchain / IDE:** Keil µVision
 * **Peripherals Interfaced:**
   * 4x4 Matrix Keypad (Row/Column scanning)
@@ -49,6 +49,6 @@ A bare-metal ARM Cortex-M0 assembly implementation on the NXP LPC1114 microcontr
 
 *Note: This project was developed as a midterm coursework project with strict deadlines. The initial release represents functional, working firmware with several identified areas for optimization:*
 
-* **Timing Routines:** Current delay implementations rely on busy-wait software decrement loops. Future revisions will migrate to 16-bit/32-bit hardware match timers or the ARM SysTick timer to free CPU cycles.
+* **Timing Routines:** Current delay implementations rely on busy-wait software decrement loops. Future revisions could migrate to 16-bit/32-bit hardware match timers or the ARM SysTick timer to free CPU cycles.
 * **Low-Register Allocation:** Several subroutines use stack pushes (`PUSH`/`POP`) where dedicated Cortex-M0 low registers (`R0`–`R7`) could be pinned to reduce cycle counts.
-* **Non-Blocking Architecture:** Future updates will transition keypad debouncing and input capture into an interrupt-driven state machine (`GPIOnIE`), allowing the MCU to enter low-power sleep modes (`WFI`) between events.
+* **Non-Blocking Architecture:** Future updates will transition keypad debouncing and input capture into an interrupt-driven state machine (`GPIOnIE`)
